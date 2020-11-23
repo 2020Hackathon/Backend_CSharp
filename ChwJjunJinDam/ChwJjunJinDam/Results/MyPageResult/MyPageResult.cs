@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChwJjunJinDam
+namespace ChwJjunJinDam.Results.MyPageResult
 {
-    class Program
+    class MyPageResult
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
