@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChwJjunJinDam.Models;
 
 namespace ChwJjunJinDam.Results.SchoolInfoResult
 {
-    class SchoolInfoResult
+    public class SchoolInfoResult
     {
+        public SchoolInfoModel schoolInfo = new SchoolInfoModel();
     }
 }

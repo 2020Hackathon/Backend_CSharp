@@ -107,6 +107,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author\EPostInfo.cs" />
+    <Compile Include="Author\EUserInfo.cs" />
     <Compile Include="Common\ComDef.cs" />
     <Compile Include="Common\ResponseMessage.cs" />
     <Compile Include="DataBase\MySqlDBConnectionManager.cs" />
@@ -118,16 +120,20 @@
     <Compile Include="JWT\Models\JWTContainerModel.cs" />
     <Compile Include="JWT\Services\IAuthService.cs" />
     <Compile Include="JWT\Services\JWTService.cs" />
-    <Compile Include="Models\MyPageModel.cs" />
+    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\SchoolInfoModel.cs" />
-    <Compile Include="Results\MyPageResult\MyPageResult.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Results\PostResult\PostResults.cs" />
     <Compile Include="Results\SchoolInfoResult\SchoolInfoResult.cs" />
+    <Compile Include="Results\UserInfoResult\UserInfoResult.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Manager\ServiceManager.cs" />
     <Compile Include="Services\ChwJjunJinDamService.cs" />
-    <Compile Include="EUserInfo.cs" />
-    <Compile Include="Utils\ResponseStatus.cs" />
-    <Compile Include="Utils\EStatusCode.cs" />
+    <Compile Include="Common\EUserInfo.cs" />
+    <Compile Include="Common\ResponseStatus.cs" />
+    <Compile Include="Common\EStatusCode.cs" />
+    <Compile Include="Utils\WrapAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
