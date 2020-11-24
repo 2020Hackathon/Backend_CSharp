@@ -30,8 +30,8 @@ namespace ChwJjunJinDam.Services
             {
                 UserModel tempModel = new UserModel();
                 // tempModel.birth = "";
-                tempModel.name = "";
                 // tempModel.phone_number = "";
+                tempModel.name = "";
                 tempModel.userInfo = "";
                 ServiceManager.ShowRequestResult(apiName, preColor, statusCode, setColor);
                 return new Response<UserInfoResult> { data = new UserInfoResult { user = tempModel }, message = msg, statusCode = statusCode };
@@ -96,9 +96,9 @@ WHERE
                             db.Open();
 
                             var userModel = new UserModel();
-                            userModel.name = name;
                             // userModel.birth = birth;
                             // userModel.phone_number = phoneNumber;
+                            userModel.name = name;
                             userModel.userInfo = userInfo;
                             
                             string updateSql = $@"
