@@ -5,7 +5,7 @@ namespace ChwJjunJinDam.DataBase
 {
     public class MySqlDBConnectionManager : DBConnectionManager
     {
-        private readonly string DATA_BASE_URL = $"SERVER=snsserver.cojfv49dbcex.us-east-2.rds.amazonaws.com;DATABASE=hackathon;UID=mspring03;PASSWORD=mspring0517;allow user variables=true";
+        private readonly string DATA_BASE_URL = $"";
 
         public override IDbConnection GetConnection()
         {

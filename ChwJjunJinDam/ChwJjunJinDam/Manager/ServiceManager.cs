@@ -36,23 +36,30 @@ namespace ChwJjunJinDam
         };
 
         /// <summary>
-        /// Get Header's Token
+        /// Extract Header's Token
         /// </summary>
         /// <param name="webOperationContext"></param>
         /// <returns></returns>
         public static string GetHeaderValue(WebOperationContext webOperationContext)
         {
             string requestHeaderValue = webOperationContext.IncomingRequest.Headers["token"].ToString();
-            if (webOperationContext.IncomingRequest.Headers != null && requestHeaderValue != null)
-            {
-                return requestHeaderValue;
-            }
-            else
-            {
-                return null;
-            }
+            return (webOperationContext.IncomingRequest.Headers != null && requestHeaderValue != null) ? requestHeaderValue : null;
         }
 
+        /// <summary>
+        /// Request Log Console Color
+        /// </summary>
+        /// <param name="apiName"></param>
+        /// <param name="preColor"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="setColor"></param>
+        public static void ShowRequestResult(string apiName, ConTextColor preColor, int statusCode, ConTextColor setColor)
+        {
+            Console.Write(CheckRequestTime() + $"{apiName} responded ");
+            WrapAPI.SetConsoleTextColor(preColor);
+            Console.WriteLine(statusCode);
+            WrapAPI.SetConsoleTextColor(setColor);
+        }
 
         /// <summary>
         /// Request Time Log
@@ -71,21 +78,6 @@ namespace ChwJjunJinDam
             msg += time.Second.ToString() + "초 ";
             msg += "] ";
             return msg;
-        }
-
-        /// <summary>
-        /// Request Log
-        /// </summary>
-        /// <param name="apiName"></param>
-        /// <param name="preColor"></param>
-        /// <param name="statusCode"></param>
-        /// <param name="setColor"></param>
-        public static void ShowRequestResult(string apiName, ConTextColor preColor, int statusCode, ConTextColor setColor)
-        {
-            Console.Write(CheckRequestTime() + $"{apiName} responded ");
-            WrapAPI.SetConsoleTextColor(preColor);
-            Console.WriteLine(statusCode);
-            WrapAPI.SetConsoleTextColor(setColor);
         }
     }
 }

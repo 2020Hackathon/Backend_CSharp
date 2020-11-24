@@ -31,7 +31,7 @@ namespace ChwJjunJinDam.Services
                 UserModel tempModel = new UserModel();
                 tempModel.birth = "";
                 tempModel.name = "";
-                tempModel.phone_number = "";
+                // tempModel.phone_number = "";
                 tempModel.userInfo = "";
                 ServiceManager.ShowRequestResult(apiName, preColor, statusCode, setColor);
                 return new Response<UserInfoResult> { data = new UserInfoResult { user = tempModel }, message = msg, statusCode = statusCode };
@@ -80,13 +80,14 @@ WHERE
             }
         }
 
-        public async Task<Response> UpdateUserInfo(string id, string birth, string name, string phone_number, string userInfo)
+        //public async Task<Response> UpdateUserInfo(string id, string birth, string name, string phone_number, string userInfo)
+        public async Task<Response> UpdateUserInfo(string id, string birth, string name, string userInfo)
         {
             string apiName = "UPDATE USER INFO";
 
             //if (ComDef.jwtService.IsTokenValid(ServiceManager.GetHeaderValue(WebOperationContext.Current)))
             //{
-                if (id != null && name != null && birth != null && phone_number != null && userInfo != null)
+                if (id != null && name != null && birth != null && userInfo != null)
                 {
                     try
                     {
@@ -97,7 +98,7 @@ WHERE
                             var userModel = new UserModel();
                             userModel.name = name;
                             userModel.birth = birth;
-                            userModel.phone_number = phone_number;
+                            // userModel.phone_number = phone_number;
                             userModel.userInfo = userInfo;
 
                             string updateSql = $@"
@@ -106,7 +107,6 @@ UPDATE
 SET
     birth = '{birth}',
     name = '{name}',
-    phone_number = '{phone_number}',
     userInfo = '{userInfo}'
 WHERE
     id = '{id}';
@@ -157,9 +157,10 @@ WHERE
 
             if (id != null)
             {
-                var postItems = new List<PostModel>();
                 try
                 {
+                    var postItems = new List<PostModel>();
+
                     using (var db = GetConnection())
                     {
                         db.Open();
@@ -212,10 +213,10 @@ WHERE
 
             if (id != null)
             {
-                var schoolInfoModel = new SchoolInfoModel();
-
                 try
                 {
+                    var schoolInfoModel = new SchoolInfoModel();
+
                     using (var db = GetConnection())
                     {
                         db.Open();

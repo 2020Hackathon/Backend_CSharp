@@ -1,5 +1,4 @@
 ﻿using ChwJjunJinDam.JWT.Models;
-using ChwJjunJinDam.JWT.Services;
 using Solomon_Server.JWT.Services;
 
 namespace ChwJjunJinDam.Common

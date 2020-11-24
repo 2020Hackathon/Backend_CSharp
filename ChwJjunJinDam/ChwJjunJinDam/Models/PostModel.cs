@@ -9,6 +9,6 @@ namespace ChwJjunJinDam.Models
         public string description { get; set; }
         public int like { get; set; }
         public string postinfo { get; set; }
-        public DateTime end_date { get; set; }
+        public string end_date { get; set; }
     }
 }
