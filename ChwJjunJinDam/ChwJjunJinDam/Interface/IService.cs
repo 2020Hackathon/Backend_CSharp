@@ -26,14 +26,14 @@ namespace ChwJjunJinDam.Interface
         /// </summary>
         /// <param name="id"></param>
         /// <param name="phoneNumber"></param>
-        /// <param name="birth"></param>
+        /// <param name="phoneNumber"></param>
         /// <param name="userInfo"></param>
         /// <returns></returns>
         [OperationContract]
         [WebInvoke(Method = "PUT", ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "/v1/mypage/basic")]
         //Task<Response> UpdateUserInfo(string id, string birth, string name, string phone_number, string userInfo);
-        Task<Response> UpdateUserInfo(string id, string birth, string name, string userInfo);
+        Task<Response> UpdateUserInfo(string id, string name, string userInfo);
 
         /// <summary>
         /// 작성 게시물 조회 API

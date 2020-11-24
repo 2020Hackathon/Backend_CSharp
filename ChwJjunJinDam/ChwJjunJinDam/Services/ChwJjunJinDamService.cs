@@ -29,7 +29,7 @@ namespace ChwJjunJinDam.Services
             GetUserInfoBadResponse getUserInfoBadResponse = delegate (ConTextColor preColor, int statusCode, ConTextColor setColor, string msg)
             {
                 UserModel tempModel = new UserModel();
-                tempModel.birth = "";
+                // tempModel.birth = "";
                 tempModel.name = "";
                 // tempModel.phone_number = "";
                 tempModel.userInfo = "";
@@ -80,14 +80,14 @@ WHERE
             }
         }
 
-        //public async Task<Response> UpdateUserInfo(string id, string birth, string name, string phone_number, string userInfo)
-        public async Task<Response> UpdateUserInfo(string id, string birth, string name, string userInfo)
+        public async Task<Response> UpdateUserInfo(string id, string name, string userInfo)
+        //public async Task<Response> UpdateUserInfo(string id, string birth, string name, string userInfo)
         {
             string apiName = "UPDATE USER INFO";
 
             //if (ComDef.jwtService.IsTokenValid(ServiceManager.GetHeaderValue(WebOperationContext.Current)))
             //{
-                if (id != null && name != null && birth != null && userInfo != null)
+                if (id != null && name != null &&  userInfo != null) 
                 {
                     try
                     {
@@ -97,15 +97,14 @@ WHERE
 
                             var userModel = new UserModel();
                             userModel.name = name;
-                            userModel.birth = birth;
-                            // userModel.phone_number = phone_number;
+                            // userModel.birth = birth;
+                            // userModel.phone_number = phoneNumber;
                             userModel.userInfo = userInfo;
-
+                            
                             string updateSql = $@"
 UPDATE
     user
-SET
-    birth = '{birth}',
+SET 
     name = '{name}',
     userInfo = '{userInfo}'
 WHERE
